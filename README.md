@@ -1,6 +1,8 @@
 Syntax highlighting for JSON5 in Vim
 ====================================
 
+For [json5](https://github.com/aseemk/json5).
+
 Install
 -------
 
