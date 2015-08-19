@@ -12,7 +12,7 @@ Install
 
 *  [Vundle](https://github.com/gmarik/vundle)
 
-		Bundle 'GutenYe/json5.vim'
+		Plugin 'GutenYe/json5.vim'
 
 *  [Pathogen](https://github.com/tpope/vim-pathogen)
 
