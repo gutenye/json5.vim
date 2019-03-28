@@ -3,6 +3,15 @@ if exists('b:current_syntax') && b:current_syntax == 'json5'
   finish
 endif
 
+" Syntax: Numbers {{{1
+syn match   json5Number    "[-+]\=\%(0\|[1-9]\d*\)\%(\.\d*\)\=\%([eE][-+]\=\d\+\)\="
+syn match   json5Number    "[-+]\=\%(\.\d\+\)\%([eE][-+]\=\d\+\)\="
+syn match   json5Number    "[-+]\=0[xX]\x*"
+syn keyword json5Number    Infinity -Infinity NaN
+
+" Syntax: An integer part of 0 followed by other digits is not allowed.
+syn match   json5NumError  "-\=\<0\d\.\d*\>"
+
 " Syntax: Strings {{{1
 syn region  json5String    start=+"+  skip=+\\\\\|\\"+  end=+"+  contains=json5Escape
 syn region  json5String    start=+'+  skip=+\\\\\|\\'+  end=+'+  contains=json5Escape
@@ -10,14 +19,6 @@ syn region  json5String    start=+'+  skip=+\\\\\|\\'+  end=+'+  contains=json5E
 " Syntax: Escape sequences
 syn match   json5Escape    "\\["\\/bfnrt]" contained
 syn match   json5Escape    "\\u\x\{4}" contained
-
-" Syntax: Numbers {{{1
-syn match   json5Number    "[-+]\=\.\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)\=\>"
-syn match   json5Number    "[-+]\=0[xX]\x*"
-syn keyword json5Number    Infinity -Infinity NaN
-
-" Syntax: An integer part of 0 followed by other digits is not allowed.
-syn match   json5NumError  "-\=\<0\d\.\d*\>"
 
 " Syntax: Boolean {{{1
 syn keyword json5Boolean   true false
