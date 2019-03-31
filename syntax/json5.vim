@@ -4,10 +4,10 @@ if exists('b:current_syntax') && b:current_syntax == 'json5'
 endif
 
 " Syntax: Numbers {{{1
-syn match   json5Number    "[-+]\=\%(0\|[1-9]\d*\)\%(\.\d*\)\=\%([eE][-+]\=\d\+\)\="
-syn match   json5Number    "[-+]\=\%(\.\d\+\)\%([eE][-+]\=\d\+\)\="
-syn match   json5Number    "[-+]\=0[xX]\x*"
-syn keyword json5Number    Infinity -Infinity NaN
+syn match json5Number    "[-+]\=\%(0\|[1-9]\d*\)\%(\.\d*\)\=\%([eE][-+]\=\d\+\)\="
+syn match json5Number    "[-+]\=\%(\.\d\+\)\%([eE][-+]\=\d\+\)\="
+syn match json5Number    "[-+]\=0[xX]\x*"
+syn match json5Number    "[-+]\=Infinity\|NaN"
 
 " Syntax: An integer part of 0 followed by other digits is not allowed.
 syn match   json5NumError  "-\=\<0\d\.\d*\>"
