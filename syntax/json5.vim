@@ -12,14 +12,17 @@ syn match   json5Number    "[-+]\=0[xX]\x*"
 syn match   json5Number    "[-+]\=Infinity\|NaN"
 
 " An integer part of 0 followed by other digits is not allowed
-syn match   json5NumError  "-\=\<0\d\.\d*\>"
+syn match   json5NumError  "[-+]\=0\d\(\d\|\.\)*"
+
+" A hexadecimal number cannot have a fractional part
+syn match   json5NumError  "[-+]\=0x\x*\.\x*"
 
 " Strings
 syn region  json5String    start=+"+  skip=+\\\\\|\\"+  end=+"+  contains=json5Escape,@Spell
 syn region  json5String    start=+'+  skip=+\\\\\|\\'+  end=+'+  contains=json5Escape,@Spell
 
 " Escape sequences
-syn match   json5Escape    "\\["\\/bfnrt]" contained
+syn match   json5Escape    "\\['\"\\bfnrtv]" contained
 syn match   json5Escape    "\\u\x\{4}" contained
 
 " Boolean
