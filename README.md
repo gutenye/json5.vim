@@ -6,25 +6,11 @@ For [json5](https://github.com/aseemk/json5).
 Install
 -------
 
-*  [NeoBundle](https://github.com/Shougo/neobundle.vim)
+As of vim commit 5a33ce2 (v9.0.2041) and neovim commit eadedfd (v0.9.5), there is no need to manually install this plugin, as the syntax files were merged upstream.
 
-		NeoBundle 'GutenYe/json5.vim'
+If you're on an older version, you could use your favourite package manager to add `GutenYe/json5.vim`.
 
-*  [Vundle](https://github.com/gmarik/vundle)
-
-		Plugin 'GutenYe/json5.vim'
-
-*  [Pathogen](https://github.com/tpope/vim-pathogen)
-
-		$ git clone https://github.com/GutenYe/json5.vim ~/.vim/bundle
-
-*  [VAM](https://github.com/MarcWeber/vim-addon-manager)
-
-		call vam#ActivateAddons(['json5.vim'])
-
-*  Manual
-
-		copy all of the files into your `~/.vim` directory
+Alternatively, manually copy all of the files into your `~/.vim` directory.
 
 Copyright
 ---------
